@@ -1,5 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+
+import RaisedButton from 'material-ui/RaisedButton';
 
 import './style/App.scss';
 
@@ -7,7 +9,7 @@ const App = ({name}) => {
     return (
         <div className="fill-screen">
             <div>
-                <h1>Hello {name}</h1>
+                <RaisedButton label="Default"/>
             </div>
         </div>
     )
