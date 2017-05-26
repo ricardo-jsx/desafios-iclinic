@@ -4,17 +4,13 @@ body {
 }
 
 .fill-screen {
-  height: 100vh;
+  height: 400px;
   display: flex;
   flex-direction: column;
 }
 
-.fill-screen {
-  div {
-    flex: 1;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
+.fill-screen > * {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
