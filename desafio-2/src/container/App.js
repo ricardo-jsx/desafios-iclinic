@@ -3,6 +3,7 @@ import Paper from 'material-ui/Paper'
 import {connect} from 'react-redux';
 
 import Header from './Header';
+import Body from './Body';
 
 import './style/App.scss';
 
@@ -17,7 +18,7 @@ const App = () => {
         <div className="fill-screen">
             <Paper style={style} zDepth={3}>
                 <Header/>
-                <div style={{flex: 8, backgroundColor: 'pink'}}></div>
+                <Body/>
                 <div style={{flex: 1, backgroundColor: 'purple'}}></div>
             </Paper>
         </div>
