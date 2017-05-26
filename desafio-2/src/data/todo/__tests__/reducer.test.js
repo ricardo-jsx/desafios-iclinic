@@ -18,8 +18,23 @@ describe("Todo Reducer =>", () => {
         expect(state.length).toEqual(0);
     });
 
-    it("Should toggle a todo", () => {
-        let state = reducer(undefined, {});
+    it("Should toggle all to dos", () => {
+        let initialState = [
+            {
+                id: '376jd8-ajs7jdhs-27dhdus7',
+                time: 1495765131323,
+                text: 'Buy Milk',
+                completed: false
+            },
+            {
+                id: '376jd8-adasd-27dhdus7',
+                time: 109283109813,
+                text: 'Buy Cheese',
+                completed: false
+            }
+        ];
+
+        let state = reducer(state, {type: "TOGGLE_TODO"});
 
         state = reducer(state, {type: "TOGGLE_TODO", payload: '376jd8-ajs7jdhs-27dhdus7'});
         expect(state[0].completed).toBeTruthy();

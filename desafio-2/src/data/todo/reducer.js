@@ -22,18 +22,15 @@ export default (state = initialState, action) => {
             return filteredState;
 
         case TOGGLE_TODO:
-            const todoRows = action.payload;
-
-            const mappedState = state.map(todo => {
-                //See if the current to do is in the list of visible to dos
-                const row = todoRows.find(row => row.id === todo.id);
-
-                if (row) return row;
+            const newState = state.map(todo => {
+                if (todo.id === action.payload) {
+                    return {...todo, completed: !todo.completed};
+                }
 
                 return todo;
             });
 
-            return mappedState;
+            return newState;
     }
 
     return state;
