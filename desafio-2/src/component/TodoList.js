@@ -3,9 +3,15 @@ import PropTypes from 'prop-types';
 
 import Todo from './Todo';
 
-const TodoList = ({todos, toggleTodo}) => {
+const TodoList = ({todos, toggleTodo, handleDeleteTodo}) => {
     const list = todos.map(todo => (
-        <Todo key={todo.id} completed={todo.completed} text={todo.text} onCheck={() => toggleTodo(todo.id)}/>
+        <Todo
+            key={todo.id}
+            completed={todo.completed}
+            text={todo.text}
+            onCheck={() => toggleTodo(todo.id)}
+            onDelete={() => handleDeleteTodo(todo.id)}
+        />
     ));
 
     return (
@@ -17,7 +23,8 @@ const TodoList = ({todos, toggleTodo}) => {
 
 TodoList.propTypes = {
     todos: PropTypes.array,
-    toggleTodo: PropTypes.func.isRequired
+    toggleTodo: PropTypes.func.isRequired,
+    handleDeleteTodo: PropTypes.func.isRequired,
 };
 
 TodoList.defaultProps = {
