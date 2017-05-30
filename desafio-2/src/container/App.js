@@ -7,21 +7,13 @@ import Body from './Body';
 
 import './style/App.scss';
 
-const style = {
-    width: 500,
-    margin: 20,
-    flex: 1,
-};
-
 const App = () => {
     return (
-        <div className="fill-screen">
-            <Paper style={style} zDepth={3}>
-                <Header/>
-                <Body/>
-                <div style={{flex: 1, backgroundColor: 'purple'}}></div>
-            </Paper>
-        </div>
+        <main className="container">
+            <Header/>
+            <Body/>
+            <div style={{backgroundColor: 'purple', padding: '30px'}}>Footer</div>
+        </main>
     )
 };
 

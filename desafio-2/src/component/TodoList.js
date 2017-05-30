@@ -9,7 +9,7 @@ const TodoList = ({todos, toggleTodo}) => {
     ));
 
     return (
-        <div>
+        <div className="todo__list">
             {list}
         </div>
     );

@@ -1,10 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import TextField from 'material-ui/TextField';
+import UpArrow from 'material-ui/svg-icons/navigation/arrow-upward';
+import DownArrow from 'material-ui/svg-icons/navigation/arrow-downward';
+
 
 import AddTodo from '../component/AddTodo';
-import AscTodo from '../component/AscTodo';
-import DownTodo from '../component/DownTodo';
+import Order from '../component/Order';
 import {addTodo} from '../data/todo/action';
 
 import './style/Header.scss';
@@ -57,8 +59,13 @@ class Header extends React.Component {
                     />
 
                     <AddTodo onClick={this.onAddTodo}/>
-                    <DownTodo onClick={this.onDownTodo}/>
-                    <AscTodo onClick={this.onAscTodo}/>
+
+                    <Order onClick={this.onAscTodo}>
+                        <UpArrow />
+                    </Order>
+                    <Order onClick={this.onDownTodo}>
+                        <DownArrow />
+                    </Order>
                 </form>
             </header>
         );

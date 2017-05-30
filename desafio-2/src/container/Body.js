@@ -2,7 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import TodoList from '../component/TodoList';
-import {toggleTodo} from '../data/todo/action'
+import {toggleTodo} from '../data/todo/action';
+
+import './style/App.scss'
 
 class Body extends React.Component {
 
@@ -10,7 +12,7 @@ class Body extends React.Component {
         const {todos, toggleTodo} = this.props;
 
         return (
-            <section style={{flex: 8}}>
+            <section className="body">
                 <TodoList todos={todos} toggleTodo={toggleTodo}/>
             </section>
         );

@@ -3,14 +3,14 @@ body {
   margin: 0;
 }
 
-.fill-screen {
-  height: 400px;
+.container {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  max-height: 100vh;
 }
 
-.fill-screen > * {
-  display: flex;
+.body {
   flex: 1;
-  flex-direction: column;
+  justify-content: flex-start;
 }
