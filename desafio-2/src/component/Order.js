@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
-import UpArrow from 'material-ui/svg-icons/navigation/arrow-upward';
 
-const AscTodo = ({onClick}) => (
+const AscTodo = ({onClick, children}) => (
     <IconButton onTouchTap={onClick}>
-        <UpArrow />
+        {children}
     </IconButton>
 );
 
