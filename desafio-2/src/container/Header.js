@@ -1,13 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import TextField from 'material-ui/TextField';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 import UpArrow from 'material-ui/svg-icons/navigation/arrow-upward';
 import DownArrow from 'material-ui/svg-icons/navigation/arrow-downward';
 
-
-import AddTodo from '../component/AddTodo';
+import TodoAction from '../component/TodoAction';
 import Order from '../component/Order';
 import {addTodo} from '../data/todo/action';
+import {orderAsc, orderDes} from '../data/order/action';
 
 import './style/Header.scss';
 
@@ -32,11 +33,11 @@ class Header extends React.Component {
     };
 
     onAscTodo = () => {
-        console.log("ASC");
+        this.props.orderAsc();
     };
 
     onDownTodo = () => {
-        console.log("DOWN");
+        this.props.orderDesc();
     };
 
     onTextFieldChange = e => {
@@ -58,7 +59,9 @@ class Header extends React.Component {
                         style={{flex: 5, paddingLeft: 10}}
                     />
 
-                    <AddTodo onClick={this.onAddTodo}/>
+                    <TodoAction onClick={this.onAddTodo}>
+                        <ContentAdd />
+                    </TodoAction>
 
                     <Order onClick={this.onAscTodo}>
                         <UpArrow />
@@ -74,7 +77,9 @@ class Header extends React.Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addTodo: (text) => dispatch(addTodo(text))
+        addTodo: (text) => dispatch(addTodo(text)),
+        orderAsc: () => dispatch(orderAsc()),
+        orderDesc: () => dispatch(orderDes())
     };
 };
 

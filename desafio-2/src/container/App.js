@@ -1,18 +1,18 @@
 import React from 'react';
-import Paper from 'material-ui/Paper'
 import {connect} from 'react-redux';
 
 import Header from './Header';
 import Body from './Body';
+import Footer from './Footer';
 
 import './style/App.scss';
 
 const App = () => {
     return (
         <main className="container">
-            <Header/>
+            <Header />
             <Body/>
-            <div style={{backgroundColor: 'purple', padding: '30px'}}>Footer</div>
+            <Footer/>
         </main>
     )
 };

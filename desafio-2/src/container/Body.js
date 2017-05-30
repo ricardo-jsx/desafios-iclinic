@@ -2,18 +2,33 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import TodoList from '../component/TodoList';
-import {toggleTodo} from '../data/todo/action';
+import {toggleTodo, removeTodo} from '../data/todo/action';
 
 import './style/App.scss'
 
 class Body extends React.Component {
 
+    orderAsc = () => {
+        const {todos} = this.props;
+        return todos.sort((a, b) => a.text.localeCompare(b.text) !== -1);
+    };
+
+    orderDesc = () => {
+        const {todos} = this.props;
+        return todos.sort((a, b) => a.text.localeCompare(b.text) === -1);
+    };
+
+    showOnlyCompleted = () => (this.props.todos.filter(todo => todo.completed));
+
     render() {
-        const {todos, toggleTodo} = this.props;
+        const {todos, toggleTodo, deleteTodo, order, visibility} = this.props;
+
+        const ordered = order.asc ? this.orderAsc() : this.orderDesc();
+        const filtered = visibility.completed ? this.showOnlyCompleted() : ordered;
 
         return (
             <section className="body">
-                <TodoList todos={todos} toggleTodo={toggleTodo}/>
+                <TodoList todos={filtered} toggleTodo={toggleTodo} handleDeleteTodo={deleteTodo}/>
             </section>
         );
     }
@@ -27,7 +42,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
     return {
-        toggleTodo: id => dispatch(toggleTodo(id))
+        toggleTodo: id => dispatch(toggleTodo(id)),
+        deleteTodo: id => dispatch(removeTodo(id))
     }
 };
 
