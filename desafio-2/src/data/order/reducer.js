@@ -1,17 +1,17 @@
-import {SET_NEWEST, SET_OLDEST} from './action';
+import {ORDER_ASC, ORDER_DESC} from './action';
 
 const initialState = {
-    newest: true,
-    oldest: false
+    asc: true,
+    desc: false
 };
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case SET_NEWEST:
-            return {...state, newest: true, oldest: false};
+        case ORDER_ASC:
+            return {...state, asc: true, desc: false};
 
-        case SET_OLDEST:
-            return {...state, newest: false, oldest: true};
+        case ORDER_DESC:
+            return {...state, asc: false, desc: true};
     }
 
     return state;

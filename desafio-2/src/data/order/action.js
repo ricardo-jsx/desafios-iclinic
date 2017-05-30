@@ -1,10 +1,10 @@
-export const SET_NEWEST = "SET_NEWEST";
-export const SET_OLDEST = "SET_OLDEST";
+export const ORDER_ASC = "ORDER_ASC";
+export const ORDER_DESC = "ORDER_DESC";
 
-export const setNewest = () => ({
-    type: SET_NEWEST
+export const orderAsc = () => ({
+    type: ORDER_ASC
 });
 
-export const setOldest = () => ({
-    type: SET_OLDEST
+export const orderDes = () => ({
+    type: ORDER_DESC
 });

@@ -1,19 +1,19 @@
 import reducer from '../reducer';
 
 describe("OrderReducer =>", () => {
-    it("Should set newest filter", () => {
+    it("Should set asc filter", () => {
         let state = reducer(undefined, {});
-        state = reducer(state, {type: "SET_NEWEST"});
+        state = reducer(state, {type: "ORDER_ASC"});
 
-        expect(state.newest).toEqual(true);
-        expect(state.oldest).toEqual(false);
+        expect(state.asc).toEqual(true);
+        expect(state.desc).toEqual(false);
     });
 
-    it("Should set oldest filter", () => {
+    it("Should set desc filter", () => {
         let state = reducer(undefined, {});
-        state = reducer(state, {type: "SET_OLDEST"});
+        state = reducer(state, {type: "ORDER_DESC"});
 
-        expect(state.oldest).toEqual(true);
-        expect(state.newest).toEqual(false);
+        expect(state.desc).toEqual(true);
+        expect(state.asc).toEqual(false);
     });
 });
