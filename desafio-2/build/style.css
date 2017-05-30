@@ -1,0 +1,27 @@
+.header .form {
+  display: flex; }
+.todo {
+  display: flex;
+  flex-direction: row; }
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-height: 100vh; }
+
+.body {
+  flex: 1;
+  justify-content: flex-start; }
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: mistyrose; }
+  .footer .footer__action {
+    margin: 12px;
+    flex: 1; }
+
+/*# sourceMappingURL=style.css.map*/
