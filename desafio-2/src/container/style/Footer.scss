@@ -1,0 +1,10 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: mistyrose;
+
+  .footer__action{
+    margin: 12px;
+    flex: 1;
+  }
+}
