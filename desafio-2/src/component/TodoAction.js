@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
-import Delete from 'material-ui/svg-icons/action/delete';
 
-const DeleteTodo = ({onClick}) => (
+const DeleteTodo = ({onClick, children}) => (
     <IconButton onTouchTap={onClick}>
-        <Delete />
+        {children}
     </IconButton>
 );
 
